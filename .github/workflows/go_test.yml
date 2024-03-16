@@ -9,7 +9,7 @@ on:
       - "**/*.go"
 
 jobs:
-  back_ci:
+  app_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout to runner
