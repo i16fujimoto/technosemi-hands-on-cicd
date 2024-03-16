@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - '**/*.go'
+      - "**/*.go"
 
 jobs:
   golangci-lint:
@@ -23,8 +23,17 @@ jobs:
         uses: reviewdog/action-golangci-lint@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          level: warning
+          level: error
+          golangci_lint_version: v1.56.2
           golangci_lint_flags: "--config=.golangci.yml"
           filter_mode: nofilter
           reporter: github-pr-review
           workdir: .
+      - name: Install goimports
+        run: go install golang.org/x/tools/cmd/goimports@latest
+      - name: Format code
+        run: goimports -w .
+      - name: Auto commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Apply Code formatter changes"
