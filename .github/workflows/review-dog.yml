@@ -19,6 +19,11 @@ jobs:
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v3
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
       - name: goimports
         run: |
           go install github.com/momotaro98/strictgoimports/cmd/strictgoimports@latest
