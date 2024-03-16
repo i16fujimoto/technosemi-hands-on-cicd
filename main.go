@@ -41,7 +41,7 @@ var (
 
 func main() {
 	// ユーザ1の投稿一覧を取得
-	user, err :=    getUser(1)
+	user, err := getUser(1)
 	if err != nil {
 		log.Println(err.Error())
 	}
