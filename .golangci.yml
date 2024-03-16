@@ -1,0 +1,64 @@
+run:
+  go: "1.21"
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - errcheck
+        - goconst
+        - gocyclo
+        - goerr113
+        - gosec
+        - maintidx
+        - varnamelen
+        - wsl
+
+linters-settings:
+  gocyclo:
+    min-complexity: 10
+  dupl:
+    threshold: 200
+
+linters:
+  enable-all: true
+  disable:
+    - cyclop # https://github.com/bkielbasa/cyclop Use gocyclo
+    - deadcode # deprecated
+    - depguard # https://github.com/OpenPeeDeeP/depguard
+    - dupl # https://github.com/golangci/dupl
+    - exhaustivestruct # https://github.com/mbilski/exhaustivestruct
+    - exhaustruct # https://github.com/GaijinEntertainment/go-exhaustruct
+    - funlen
+    - gci # https://github.com/daixiang0/gci
+    - godot # https://github.com/tetafro/godot
+    - godox # https://github.com/766b/godox
+    - golint # deprecated
+    - gomoddirectives # https://github.com/ldez/gomoddirectives
+    - gosmopolitan # https://github.com/xen0n/gosmopolitan
+    - ifshort # deprecated
+    - interfacer # deprecated
+    - ireturn # https://github.com/butuzov/ireturn 誤検知多く最近メンテナンスされていない
+    - lll
+    - maligned # deprecated
+    - nlreturn # https://github.com/ssgreg/nlreturn
+    - nosnakecase
+    - rowserrcheck
+    - scopelint # https://qiita.com/kyoh86/items/8f14d171dbe08f22ec1e
+    - structcheck # deprecated
+    - tagalign # https://github.com/4meepo/tagalign struct tag のフォーマット
+    - tagliatelle # https://github.com/ldez/tagliatelle
+    - testpackage
+    - varcheck # deprecated
+    - varnamelen # https://github.com/blizzy78/varnamelen
+    - wastedassign
+    - wrapcheck # https://github.com/tomarrell/wrapcheck
+    - wsl # https://github.com/bombsimon/wsl
+    - gochecknoinits
+    - gochecknoglobals
+
+output:
+  sort-results: true
