@@ -26,6 +26,7 @@ linters-settings:
 linters:
   enable-all: true
   disable:
+    - gomnd
     - cyclop # https://github.com/bkielbasa/cyclop Use gocyclo
     - deadcode # deprecated
     - depguard # https://github.com/OpenPeeDeeP/depguard
