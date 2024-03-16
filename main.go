@@ -49,7 +49,7 @@ func main() {
 
 	// 取得した投稿一覧を出力
 	for _, post := range posts {
-		log.Println(post)
+		log.Println(post) // fmt.Println(post)
 	}
 }
 
