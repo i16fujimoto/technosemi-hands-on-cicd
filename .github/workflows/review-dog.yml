@@ -23,7 +23,7 @@ jobs:
         uses: reviewdog/action-golangci-lint@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          level: error
+          fail_on_error: true
           golangci_lint_version: v1.56.2
           golangci_lint_flags: "--config=.golangci.yml"
           filter_mode: nofilter
