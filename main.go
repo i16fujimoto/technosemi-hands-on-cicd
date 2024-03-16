@@ -41,7 +41,7 @@ var (
 
 func main() {
 	// ユーザ1の投稿一覧を取得
-	user, err :=    getUser(1)
+	user, err := getUser(1)
 	if err != nil {
 		log.Println(err.Error())
 	}
@@ -49,7 +49,7 @@ func main() {
 
 	// 取得した投稿一覧を出力
 	for _, post := range posts {
-		fmt.Println(post) // log.Println(post)
+		log.Println(post) // fmt.Println(post)
 	}
 }
 
