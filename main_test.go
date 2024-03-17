@@ -18,7 +18,7 @@ func Test_getUser(t *testing.T) {
 	}{
 		{
 			name: "success",
-			args: args{id: 1},
+			args: args{id: 2},
 			want: &user{id: 1, name: "user1"},
 		},
 		{
